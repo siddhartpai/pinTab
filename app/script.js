@@ -23,6 +23,7 @@ app.controller('mainCtrl',['$scope','$timeout',function($scope,$timeout){
   debugger;
   $scope.savedURLS  = [];
   $scope.onSubmit = function(){
+    $scope.savedURLS.push($scope.url);
     saveURL($scope.url);
   }
   getURL(function(data){
