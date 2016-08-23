@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
+  "name": "PINTAB",
   "description": "Saves Tabs and opens up it pinned.",
   "version": "1.0",
 
