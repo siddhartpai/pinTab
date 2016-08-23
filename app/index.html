@@ -1,22 +1,31 @@
-<html>
+<html style="min-width:400px;min-height:600px">
 <head>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <script src="node_modules/angular/angular.js"></script>
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="basic.css">
 </head>
 <body ng-app="workEX">
-  <div ng-controller="mainCtrl">
-    <form id="urlForm"  ng-submit="onSubmit()">
-      <input id="url" type="text" ng-model="url"></input>
-      <input type="submit"></input>
-    </form>
-    <button value=""   ng-click="openPinTabs()">Pin'em Up</button>
-    <div style="overflow:scroll;">
-      <h4>Saved URLS</h4>
-      <div class="saveURL" ng-repeat="url in savedURLS">
-        <div>{{url}}</div>
+  <div ng-controller="mainCtrl" class="container main-wrapper">
+    <div class="heading"><img src="icon.png"/></div>
+    <div class="form-group">
+      <form id="urlForm" class="input-form"  ng-submit="onSubmit()">
+        <input class="form-control url-input" id="url" type="text" ng-model="url"></input>
+        <input class="btn btn-info col-xs-6" type="submit"></input>
+        <button class="btn btn-primary col-xs-6" value="" ng-click="openPinTabs()">Pin'em Up</button>
+      </form>
+    </div>
+    <br/><br/>
+    <div class="container">
+      <legend><h4>Saved URLS</h4></legend>
+      <div class="list-wrapper">
+        <div class="saveURL" ng-repeat="url in savedURLS">
+          <div class="card well info">
+            {{url}}
+          </div>
+        </div>
       </div>
     </div>
   </div>
