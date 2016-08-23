@@ -1,0 +1,21 @@
+.main-wrapper{
+	padding: 10px;
+}
+.input-form.form-control{
+	margin-bottom:10px 
+}
+.url-input{
+	margin-bottom:10px;
+}
+.heading{
+	margin-bottom:30px;
+}
+
+.heading>img{
+	width: 50%;
+	margin:0 25%;
+	height:auto;
+}
+.list-wrapper{
+	max-height:300px;
+}
