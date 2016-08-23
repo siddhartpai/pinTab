@@ -1,0 +1,24 @@
+<html>
+<head>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="script.js"></script>
+</head>
+<body ng-app="workEX">
+  <div ng-controller="mainCtrl">
+    <form id="urlForm"  ng-submit="onSubmit()">
+      <input id="url" type="text" ng-model="url"></input>
+      <input type="submit"></input>
+    </form>
+    <button value=""   ng-click="openPinTabs()">Pin'em Up</button>
+    <div style="overflow:scroll;">
+      <h4>Saved URLS</h4>
+      <div class="saveURL" ng-repeat="url in savedURLS">
+        <div>{{url}}</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
