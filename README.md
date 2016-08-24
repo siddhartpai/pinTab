@@ -6,7 +6,7 @@ Sometimes you lose all your saved tabs when you close chrome and it's always a p
 ## Install from source
 * Clone this extension
 * Go to the app folder and run `npm install`
-* Go to the [Extensions](chrome://extensions) page and enable 'Developer Mode'
+* Go to the <chrome://extensions> page and enable 'Developer Mode'
 * You will find the button to load the unpacked extension below the Developer Mode checkbox.
 * Point the folder to the `workEX` directory
 * Click OK 
@@ -15,6 +15,6 @@ Sometimes you lose all your saved tabs when you close chrome and it's always a p
 ## Install via extension
 The extension is just a release and may not be up to date with the master branch. Please pull the master branch for the latest code. 
 * Download the `workEX.crx` file from the extensions folder
-* Open the [Extensions](chrome://extensions) page and enable 'Developer Mode'
+* Open the <chrome://extensions> page and enable 'Developer Mode'
 * Drag the downloaded extension into the window to install.
 * Click Add Extension
