@@ -31,27 +31,43 @@ function getURL(callback){
   })
 }
 
-var app=angular.module('workEX',[]);
+var app=angular.module('workEX',['ui','ui.filters']);
 
 app.controller('mainCtrl',['$scope','$timeout',function($scope,$timeout){
   $scope.savedURLS  = [];
-
-  $scope.onSubmit = function(){
-    $scope.savedURLS.push($scope.url);
-    saveURL($scope.url);
+  var initialize = function(){
+    loadURLs();
   }
-  console.log('gonna get URLS');
-  getURL(function(data){
-      $timeout(function(){
-        $scope.savedURLS = data;
-      },0);
-  });
+
+  function guidGenerator() {
+    var S4 = function() {
+       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+    };
+    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+  }
+  $scope.onSubmit = function(){
+    var randomId = guidGenerator();
+    var urlObject = {'groupId':0,'id':randomId,'url':$scope.url,'tags':[]};
+    $scope.savedURLS.push(urlObject);
+    saveURL(urlObject);
+  }
+
+ var loadURLs = function(){
+   getURL(function(data){
+     $timeout(function(){
+       $scope.savedURLS = data;
+     },0);
+   });
+ }
+
   $scope.openPinTabs = function(){
     angular.forEach($scope.savedURLS,function(value,key){
-      if(value.split('http://').length===1){
-        value = "http://"+value;
+      if(value['url'].split('http://').length===1){
+        url = "http://"+value.url;
       }
-      chrome.tabs.create({ url: value,pinned:true });
+      chrome.tabs.create({ 'url': url,pinned:true });
     });
   }
+
+  initialize();
 }]);

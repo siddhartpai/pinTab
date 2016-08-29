@@ -2,6 +2,7 @@
 <head>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
   <script src="node_modules/angular/angular.js"></script>
+  <script src="bower_components/angular-ui/build/angular-ui.js"></script>
   <script src="node_modules/jquery/dist/jquery.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   <script src="script.js"></script>
@@ -21,9 +22,19 @@
     <div class="container">
       <legend><h4>Saved URLS</h4></legend>
       <div class="list-wrapper">
-        <div class="saveURL" ng-repeat="url in savedURLS">
-          <div class="card well info">
-            {{url}}
+        <div class="tagWrapper">
+          <div class="tag" ng-repeat="urlObject in savedURLS | unique:'groupId'">{{urlObject.url}}</div>
+        </div>
+        <div class="saveURL" ng-repeat="urlObject in savedURLS ">
+          <div class="card well card-block info">
+            <div class="card-header">
+              <div class="tags pull-left">
+                <input type="text" class="tagInput" ng-model="urlObject.tagName"/>
+              </div>
+            </div>
+            <div class="glyphicon glyphicon-remove pull-right"></div>
+
+            {{urlObject.url}}
           </div>
         </div>
       </div>

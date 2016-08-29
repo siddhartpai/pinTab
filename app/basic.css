@@ -2,7 +2,7 @@
 	padding: 10px;
 }
 .input-form.form-control{
-	margin-bottom:10px 
+	margin-bottom:10px
 }
 .url-input{
 	margin-bottom:10px;
@@ -18,4 +18,11 @@
 }
 .list-wrapper{
 	max-height:300px;
+}
+.tagInput{
+	-webkit-appearance: none;
+	outline: none;
+	background: whitesmoke;
+	border: 0px;
+	border-bottom: 2px solid grey;
 }
