@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "description": "",
+  "main": "script.js",
+  "authors": [
+    "Siddharth Pai <siddharth@10i.co.in>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/siddhartpai/pinTab",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui": "^0.4.0"
+  }
+}
